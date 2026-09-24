@@ -47,6 +47,26 @@
     background: transparent !important;
   }
 
+  .contract-print-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8mm;
+    margin-top: 10mm;
+    padding-top: 3mm;
+    border-top: 1px solid #9ca3af;
+    color: #374151;
+    font-size: 9pt;
+    direction: rtl;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .contract-print-footer bdi {
+    overflow-wrap: anywhere;
+    text-align: left;
+  }
+
   /* Keep the document masthead together and attached to the contract body. */
   #contract-print-area > .avoid-break {
     break-inside: avoid-page;
@@ -95,4 +115,8 @@
     size: A4 portrait;
     margin: 16mm 15mm 17mm;
   }
+}
+
+.contract-print-footer {
+  display: none;
 }

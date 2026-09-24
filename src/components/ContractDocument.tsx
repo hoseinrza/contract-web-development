@@ -20,6 +20,8 @@ export const ContractDocument: React.FC<ContractDocumentProps> = ({
   onUpdate,
   onPrint,
 }) => {
+  const siteAddress = window.location.href;
+
   const handleClientChange = (field: keyof PartyInfo, value: string) => {
     onUpdate('client', { ...data.client, [field]: value });
   };
@@ -167,6 +169,11 @@ export const ContractDocument: React.FC<ContractDocumentProps> = ({
           onContractorDateChange={(val) => onUpdate('contractorSignDate', val)}
         />
       </form>
+
+      <footer className="contract-print-footer" dir="rtl">
+        <span>نشانی سامانه:</span>
+        <bdi dir="ltr">{siteAddress}</bdi>
+      </footer>
     </div>
   );
 };

@@ -2,23 +2,30 @@
 
 @layer base {
   body {
-    font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+    font-family: 'B Nazanin', Tahoma, sans-serif;
   }
 }
 
 @media print {
+  html,
+  body {
+    width: 100%;
+    min-width: 0;
+    background: #fff !important;
+  }
+
   .no-print {
     display: none !important;
   }
-  
+
   body {
-    background-color: white !important;
-    color: #1e293b !important;
-    font-size: 11pt;
-    line-height: 1.6;
+    color: #111827 !important;
+    font-size: 12pt;
+    line-height: 1.8;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
-  /* Remove form borders, backgrounds, and shadows during print */
   input, textarea, select {
     border: none !important;
     background: transparent !important;
@@ -35,8 +42,43 @@
     padding: 0 !important;
     margin: 0 !important;
     max-width: 100% !important;
+    width: 100% !important;
     border-radius: 0 !important;
     background: transparent !important;
+  }
+
+  /* Keep the document masthead together and attached to the contract body. */
+  #contract-print-area > .avoid-break {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3 {
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  input, textarea, select {
+    font: inherit;
   }
 
   .page-break {
@@ -46,11 +88,11 @@
 
   .avoid-break {
     page-break-inside: avoid;
-    break-inside: avoid;
+    break-inside: avoid-page;
   }
 
   @page {
     size: A4 portrait;
-    margin: 14mm 12mm 14mm 12mm;
+    margin: 16mm 15mm 17mm;
   }
 }

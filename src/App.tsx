@@ -77,7 +77,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 text-slate-800 pb-16 print:bg-white print:p-0 print:pb-0 font-['Vazirmatn',sans-serif]">
+    <div className="min-h-screen bg-slate-100 text-slate-800 pb-16 print:bg-white print:p-0 print:pb-0 font-['B_Nazanin',Tahoma,sans-serif]">
       {/* هدر کنترل‌های برنامه (در زمان پرینت مخفی می‌شود) */}
       <ContractHeader
         isEditing={isEditing}

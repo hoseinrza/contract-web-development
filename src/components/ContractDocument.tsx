@@ -171,7 +171,7 @@ export const ContractDocument: React.FC<ContractDocumentProps> = ({
       </form>
 
       <footer className="contract-print-footer" dir="rtl">
-        <span>نشانی سامانه:</span>
+        <span>&#1606;&#1588;&#1575;&#1606;&#1740; &#1587;&#1575;&#1605;&#1575;&#1606;&#1607;:</span>
         <bdi dir="ltr">{siteAddress}</bdi>
       </footer>
     </div>

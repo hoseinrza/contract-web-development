@@ -6,6 +6,10 @@
   }
 }
 
+.contract-print-footer {
+  display: none;
+}
+
 @media print {
   html,
   body {
@@ -49,10 +53,14 @@
 
   .contract-print-footer {
     display: flex;
+    position: fixed;
+    right: 0;
+    bottom: -12mm;
+    left: 0;
     justify-content: space-between;
     align-items: center;
     gap: 8mm;
-    margin-top: 10mm;
+    margin: 0;
     padding-top: 3mm;
     border-top: 1px solid #9ca3af;
     color: #374151;
@@ -65,6 +73,10 @@
   .contract-print-footer bdi {
     overflow-wrap: anywhere;
     text-align: left;
+  }
+
+  #contract-print-area {
+    padding-bottom: 4mm !important;
   }
 
   /* Keep the document masthead together and attached to the contract body. */
@@ -113,10 +125,20 @@
 
   @page {
     size: A4 portrait;
-    margin: 16mm 15mm 17mm;
-  }
-}
+    margin: 16mm 15mm 25mm;
 
-.contract-print-footer {
-  display: none;
+    @top-center {
+      content: "نرم‌افزار توسعه و معماری جامع قرارداد";
+      color: #4b5563;
+      font-family: 'B Nazanin', Tahoma, sans-serif;
+      font-size: 9pt;
+    }
+
+    @bottom-center {
+      content: "صفحه " counter(page) " از " counter(pages);
+      color: #4b5563;
+      font-family: 'B Nazanin', Tahoma, sans-serif;
+      font-size: 9pt;
+    }
+  }
 }
